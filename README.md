@@ -64,6 +64,6 @@ Column 13:
 - Value 3: reversable defect
 
 Column 14:
-- Has greater than 50% of coronary arteries
+- Has greater than 50% narrowing of coronary arteries
     - Value 0: Yes (Has coronary heart disease)
     - Value 1: No (Does not have coronary heart disease)
