@@ -4,6 +4,8 @@
 
 Uses K-Nearest Neighbours algorithm to predict whether a patient has heart disease (>50% narrowing of coronary arteries)
 
+### Average accuracy ranges from 81% - 84%
+
 Column 1:
 - Age
 
