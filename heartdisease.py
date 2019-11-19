@@ -7,8 +7,8 @@ def euclidianDistance(a, b):
     # Gets the euclidean distance from 2 n-dimensional points
     # (n=13 in this case)
 
-    A = a[:13]
-    B = b[:13]
+    A = a[2:14]
+    B = b[2:14]
     return math.sqrt(sum([(a - b) ** 2 for a, b in zip(A, B)]))
 
 def buildDistanceMatrix(dataset, unknown):
@@ -78,7 +78,7 @@ def normalize(ds):
 
 def main():
     # Read in the dataset
-    df = pd.read_csv('heart.csv', sep=',', header=None)
+    df = pd.read_csv('binByMean.csv', sep=',', header=None)
 
     avg_acc = []
     
@@ -89,8 +89,8 @@ def main():
         s = normalize(s)
 
         # Split 70%/30%
-        train = s[:205]
-        test = s[205:]
+        train = s[:240]
+        test = s[240:]
 
         k = 15
 

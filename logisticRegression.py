@@ -2,8 +2,6 @@ import pandas as pd
 import numpy as np 
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import SGDClassifier, Perceptron
-from sklearn.linear_model import PassiveAggressiveClassifier
 from sklearn.utils import shuffle
 from sklearn import metrics
 from sklearn import preprocessing
@@ -46,8 +44,8 @@ def normalize(ds):
 def main():
     
     # Read the dataset
-    df = pd.read_csv('heart.csv', sep=',', header=None)
-    df = normalize(df)
+    df = pd.read_csv('binByMean.csv', sep=',', header=None)
+    randomized_df = normalize(df)
     avg_acc = []
 
     # Run for 1000 epochs to get an average
@@ -58,16 +56,16 @@ def main():
         randomized_df = shuffle(df)
 
         # Feature columns are 0 to 12
-        feature_cols = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        feature_cols = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
 
         # X = features
         X = randomized_df[feature_cols]
     
         # y = predicted attribute
-        y = randomized_df[13]
+        y = randomized_df[15]
 
         # Split into training and test sets
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
         
         # Build the model using the liblinear solver
         logreg = LogisticRegression(solver='liblinear')
